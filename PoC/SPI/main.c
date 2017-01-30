@@ -101,7 +101,7 @@ int main(void)
 
 	SPIInit();
 
-	GPIOB->BSRRH =  GPIO_Pin_12;
+	GPIOB->BSRRH = GPIO_Pin_12;
 	printf("helloworldbitches");
 	addr = CONFIG_A;
 	readReg(addr,regDataRead,count);
