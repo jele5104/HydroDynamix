@@ -1,0 +1,701 @@
+<?xml version="1.0"?>
+<TComponentSet id="0" CurrentRevColumnWidth="100" NameColumnWidth="300" NextRevColumnWidth="100">
+  <LifeCycleDefinitionGUID>C49BAAE1-4B93-4C84-9FD7-CC93C2E8574D</LifeCycleDefinitionGUID>
+  <VaultGUID>B7D15EC3-160A-466F-A46C-7801FE6295A7</VaultGUID>
+  <VaultName>Altium Content Vault</VaultName>
+  <RequiredParameters>
+    <TRequiredParameter id="1" ColumnWidth="100">
+      <HRID>2nd Harmonic(dBc)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="2" ColumnWidth="100">
+      <HRID>3rd Harmonic(dBc)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="3" ColumnWidth="100">
+      <HRID>@ MHz</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="4" ColumnWidth="100">
+      <HRID>Acl, min stable gain(V/V)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="5" ColumnWidth="100">
+      <HRID>BW @ Acl(MHz)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="6" ColumnWidth="100">
+      <HRID>Code_JEDEC</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="7" ColumnWidth="100">
+      <HRID>Comment</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="8" ColumnWidth="100">
+      <HRID>ComponentLink1Description</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="9" ColumnWidth="100">
+      <HRID>ComponentLink1URL</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="10" ColumnWidth="100">
+      <HRID>ComponentLink2Description</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="11" ColumnWidth="100">
+      <HRID>ComponentLink2URL</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="12" ColumnWidth="100">
+      <HRID>ComponentLink3Description</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="13" ColumnWidth="100">
+      <HRID>ComponentLink3URL</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="14" ColumnWidth="100">
+      <HRID>DatasheetVersion</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="15" ColumnWidth="100">
+      <HRID>Description</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="16" ColumnWidth="100">
+      <HRID>Eco-Plan</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="17" ColumnWidth="100">
+      <HRID>Iib(Max)(nA)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="18" ColumnWidth="100">
+      <HRID>Io(Typ)(mA)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="19" ColumnWidth="100">
+      <HRID>Iq per channel(Max)(mA)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="20" ColumnWidth="100">
+      <HRID>Manufacturer</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="21" ColumnWidth="100">
+      <HRID>Mounting Technology</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="22" ColumnWidth="100">
+      <HRID>Number of Channels</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="23" ColumnWidth="100">
+      <HRID>PackageDescription</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="24" ColumnWidth="100">
+      <HRID>PackageReference</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="25" ColumnWidth="100">
+      <HRID>PackageVersion</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="26" ColumnWidth="100">
+      <HRID>PartNumber</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="27" ColumnWidth="100">
+      <HRID>Settling Time (0.1%)(Typ)(ns)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="28" ColumnWidth="100">
+      <HRID>Slew Rate(Typ)(V/us)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="29" ColumnWidth="100">
+      <HRID>Sub Family</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="30" ColumnWidth="100">
+      <HRID>THD (Fc is 1 MHz)(Typ)(dB)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="31" ColumnWidth="100">
+      <HRID>Vio(Max)(mV)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="32" ColumnWidth="100">
+      <HRID>Vn at Flatband(Typ)(nV/rtHz)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="33" ColumnWidth="100">
+      <HRID>Vs(Max)(V)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter id="34" ColumnWidth="100">
+      <HRID>Vs(Min)(V)</HRID>
+      <Visible>true</Visible>
+      <IsRequired>false</IsRequired>
+      <DataType>Text</DataType>
+      <ParamType>4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue></DefaultValue>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredParameter>
+  </RequiredParameters>
+  <RequiredModels>
+    <TRequiredModel id="35" ColumnWidth="100">
+      <HRID>PCBLIB</HRID>
+      <Visible>true</Visible>
+      <ModelKind>PCBLIB</ModelKind>
+      <IsRequired>false</IsRequired>
+      <FromTemplate>false</FromTemplate>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredModel>
+    <TRequiredModel id="36" ColumnWidth="100">
+      <HRID>PCBLIB 1</HRID>
+      <Visible>true</Visible>
+      <ModelKind>PCBLIB</ModelKind>
+      <IsRequired>false</IsRequired>
+      <FromTemplate>false</FromTemplate>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredModel>
+    <TRequiredModel id="37" ColumnWidth="100">
+      <HRID>PCBLIB 2</HRID>
+      <Visible>true</Visible>
+      <ModelKind>PCBLIB</ModelKind>
+      <IsRequired>false</IsRequired>
+      <FromTemplate>false</FromTemplate>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredModel>
+    <TRequiredModel id="38" ColumnWidth="100">
+      <HRID>SCHLIB</HRID>
+      <Visible>true</Visible>
+      <ModelKind>SCHLIB</ModelKind>
+      <IsRequired>false</IsRequired>
+      <FromTemplate>false</FromTemplate>
+      <IsReadOnly>false</IsReadOnly>
+    </TRequiredModel>
+  </RequiredModels>
+  <RequiredComponentTypes ColumnWidth="100">
+    <Visible>true</Visible>
+    <IsRequired>false</IsRequired>
+    <DataType>ComponentType</DataType>
+    <IsReadOnly>false</IsReadOnly>
+  </RequiredComponentTypes>
+  <ModelLinks>
+    <TModelLink id="39">
+      <HRID>PCC-0151-01427-2</HRID>
+      <VaultGUID>B7D15EC3-160A-466F-A46C-7801FE6295A7</VaultGUID>
+      <ItemGUID>5D99893E-E865-4798-BD32-9284BC89796A</ItemGUID>
+      <ModelKind>PCBLIB</ModelKind>
+      <RevisionGUID>1FD5D395-76B1-4979-9B26-F19811084593</RevisionGUID>
+      <FromTemplate>false</FromTemplate>
+    </TModelLink>
+    <TModelLink id="40">
+      <HRID>PCC-0151-01428-2</HRID>
+      <VaultGUID>B7D15EC3-160A-466F-A46C-7801FE6295A7</VaultGUID>
+      <ItemGUID>77174BEE-460C-49F9-A66A-52152DFBBE6A</ItemGUID>
+      <ModelKind>PCBLIB</ModelKind>
+      <RevisionGUID>8AB502E5-EB92-49EC-B9D1-6C43E1A91897</RevisionGUID>
+      <FromTemplate>false</FromTemplate>
+    </TModelLink>
+    <TModelLink id="41">
+      <HRID>PCC-0151-01429-2</HRID>
+      <VaultGUID>B7D15EC3-160A-466F-A46C-7801FE6295A7</VaultGUID>
+      <ItemGUID>4C9C5D60-C49E-4AC1-8504-6375C857F849</ItemGUID>
+      <ModelKind>PCBLIB</ModelKind>
+      <RevisionGUID>F55BD70C-E34B-4050-A7C1-AC4872BE51DD</RevisionGUID>
+      <FromTemplate>false</FromTemplate>
+    </TModelLink>
+    <TModelLink id="42">
+      <HRID>SYM-0119-04366-1</HRID>
+      <VaultGUID>B7D15EC3-160A-466F-A46C-7801FE6295A7</VaultGUID>
+      <ItemGUID>A1A6D2A8-FF3B-4F6C-9CDF-DCCFE66EBE7C</ItemGUID>
+      <ModelKind>SCHLIB</ModelKind>
+      <RevisionGUID>027D1088-BF14-4D09-92A8-9D10947CAFA9</RevisionGUID>
+      <FromTemplate>false</FromTemplate>
+    </TModelLink>
+  </ModelLinks>
+  <PartChoiceListLinks StateIndex="2">
+    <ComponentSet href="#0"/>
+    <ItemNamingScheme>PCL-{00000}</ItemNamingScheme>
+  </PartChoiceListLinks>
+  <TopGroup id="43" StateIndex="2" Collapsed="false">
+    <Parameters/>
+    <ModelChoices/>
+    <ComponentTypes/>
+    <ComponentSet href="#0"/>
+    <ItemNamingScheme>CMP-0018-{00000}</ItemNamingScheme>
+    <Groups>
+      <TGroup id="44" StateIndex="2" Collapsed="false">
+        <HRID>Unified Components</HRID>
+        <ParentGroup href="#43"/>
+        <Parameters/>
+        <ModelChoices/>
+        <ComponentTypes/>
+        <ComponentSet href="#0"/>
+        <Groups>
+          <TGroup id="45" StateIndex="2" Collapsed="false">
+            <HRID>Components</HRID>
+            <ParentGroup href="#44"/>
+            <Parameters/>
+            <ModelChoices/>
+            <ComponentTypes/>
+            <ComponentSet href="#0"/>
+            <Groups>
+              <TGroup id="46" StateIndex="2" Collapsed="false">
+                <HRID>Texas Instruments</HRID>
+                <ParentGroup href="#45"/>
+                <Parameters/>
+                <ModelChoices/>
+                <ComponentTypes/>
+                <ComponentSet href="#0"/>
+                <Groups>
+                  <TGroup id="47" StateIndex="2" Collapsed="false">
+                    <HRID>Amplifiers and Linear</HRID>
+                    <ParentGroup href="#46"/>
+                    <Parameters/>
+                    <ModelChoices/>
+                    <ComponentTypes/>
+                    <ComponentSet href="#0"/>
+                    <Groups>
+                      <TGroup id="48" StateIndex="2" Collapsed="false">
+                        <HRID>Operational Amplifier</HRID>
+                        <ParentGroup href="#47"/>
+                        <Parameters/>
+                        <ModelChoices/>
+                        <ComponentTypes/>
+                        <ComponentSet href="#0"/>
+                        <Groups>
+                          <TGroup id="49" StateIndex="2" Collapsed="false">
+                            <HRID>High Speed Amplifier</HRID>
+                            <GUID>CF7F9DD9-180D-4093-BB80-99DA58C1F2DF</GUID>
+                            <ParentGroup href="#48"/>
+                            <Parameters/>
+                            <ModelChoices/>
+                            <ComponentTypes/>
+                            <ComponentSet href="#0"/>
+                            <Groups/>
+                            <ComponentDefinitions/>
+                            <Path>Unified Components\Components\Texas Instruments\Amplifiers and Linear\Operational Amplifier\High Speed Amplifier</Path>
+                            <IsDefaultGroup>true</IsDefaultGroup>
+                          </TGroup>
+                        </Groups>
+                        <ComponentDefinitions/>
+                        <Path>Unified Components\Components\Texas Instruments\Amplifiers and Linear\Operational Amplifier</Path>
+                        <IsDefaultGroup>false</IsDefaultGroup>
+                      </TGroup>
+                    </Groups>
+                    <ComponentDefinitions/>
+                    <Path>Unified Components\Components\Texas Instruments\Amplifiers and Linear</Path>
+                    <IsDefaultGroup>false</IsDefaultGroup>
+                  </TGroup>
+                </Groups>
+                <ComponentDefinitions/>
+                <Path>Unified Components\Components\Texas Instruments</Path>
+                <IsDefaultGroup>false</IsDefaultGroup>
+              </TGroup>
+            </Groups>
+            <ComponentDefinitions/>
+            <Path>Unified Components\Components</Path>
+            <IsDefaultGroup>false</IsDefaultGroup>
+          </TGroup>
+        </Groups>
+        <ComponentDefinitions/>
+        <Path>Unified Components</Path>
+        <IsDefaultGroup>false</IsDefaultGroup>
+      </TGroup>
+      <TGroup id="50" StateIndex="2" Collapsed="false">
+        <HRID>High Speed Amplifier</HRID>
+        <GUID>CF7F9DD9-180D-4093-BB80-99DA58C1F2DF</GUID>
+        <ParentGroup href="#43"/>
+        <Parameters/>
+        <ModelChoices/>
+        <ComponentTypes/>
+        <ComponentSet href="#0"/>
+        <Groups/>
+        <ComponentDefinitions>
+          <TComponentDefinition StateIndex="0">
+            <HRID>CMP-0018-00416</HRID>
+            <GUID>976E6DBD-9F11-42FF-843F-A974302F8D1E</GUID>
+            <ParentGroup href="#50"/>
+            <Parameters>
+              <TParameter>
+                <RequiredParameter href="#7"/>
+                <Value>OPA657N/250</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#15"/>
+                <Value>1.6 GHz, Low Noise, Fet-Input Operational Amplifier, 8 to 12 V, -40 to 85 degC, 5-pin SOT23 (DBV5), Green (RoHS &amp; no Sb/Br)</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#30"/>
+                <Value>-72</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#34"/>
+                <Value>8</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#19"/>
+                <Value>16.3</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#14"/>
+                <Value>SBOS197E</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#10"/>
+                <Value>Datasheet</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#22"/>
+                <Value>1</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#20"/>
+                <Value>Texas Instruments</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#11"/>
+                <Value>http://www.ti.com/general/docs/lit/getliterature.tsp?genericPartNumber=OPA657&amp;fileType=pdf</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#2"/>
+                <Value>106</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#25"/>
+                <Value>4073253-4/K, 03/2006</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#26"/>
+                <Value>OPA657N/250</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#23"/>
+                <Value>5-Pin Plastic Small Outline, Body 1.6 x 2.9 mm, Pitch 0.95 mm</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#5"/>
+                <Value>340</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#3"/>
+                <Value>5</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#1"/>
+                <Value>74</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#12"/>
+                <Value>Package Specification</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#29"/>
+                <Value>High Output Current Amplifier (&gt;=50mA), High Speed Amplifier (&gt;=50MHz)</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#4"/>
+                <Value>7</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#6"/>
+                <Value>MO-178</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#24"/>
+                <Value>DBV0005A</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#33"/>
+                <Value>12</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#9"/>
+                <Value>http://www.ti.com/</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#17"/>
+                <Value>0.02</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#31"/>
+                <Value>0.6</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#18"/>
+                <Value>70</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#21"/>
+                <Value>Surface Mount</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#27"/>
+                <Value>11</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#13"/>
+                <Value>http://www.ti.com/litv/pdf/mpds018i</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#32"/>
+                <Value>5</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#28"/>
+                <Value>700</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#8"/>
+                <Value>Manufacturer URL</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+              <TParameter>
+                <RequiredParameter href="#16"/>
+                <Value>Green (RoHS &amp; no Sb/Br)</Value>
+                <RealValue>NaN</RealValue>
+              </TParameter>
+            </Parameters>
+            <ModelChoices>
+              <TModelChoice>
+                <RequiredModel href="#35"/>
+                <ModelLink href="#39"/>
+              </TModelChoice>
+              <TModelChoice>
+                <RequiredModel href="#36"/>
+                <ModelLink href="#40"/>
+              </TModelChoice>
+              <TModelChoice>
+                <RequiredModel href="#38"/>
+                <ModelLink href="#42"/>
+              </TModelChoice>
+              <TModelChoice>
+                <RequiredModel href="#37"/>
+                <ModelLink href="#41"/>
+              </TModelChoice>
+            </ModelChoices>
+            <ComponentTypes/>
+            <ItemHRID>CMP-0018-00416</ItemHRID>
+            <RevisionGUID>FB077603-3F49-419F-97F1-FF85047A8FDB</RevisionGUID>
+            <RevisionId>2</RevisionId>
+          </TComponentDefinition>
+        </ComponentDefinitions>
+        <Path>Unified Components\Components\Texas Instruments\Amplifiers and Linear\Operational Amplifier\High Speed Amplifier</Path>
+        <IsDefaultGroup>false</IsDefaultGroup>
+      </TGroup>
+    </Groups>
+    <ComponentDefinitions/>
+    <IsDefaultGroup>false</IsDefaultGroup>
+  </TopGroup>
+  <ShowReleaseState>false</ShowReleaseState>
+  <ItemNamingSchemeMappings>
+    <TItemNamingSchemeMapping>
+      <SimpleNamingScheme>CMP-{00000}</SimpleNamingScheme>
+      <InitialIndex>0</InitialIndex>
+    </TItemNamingSchemeMapping>
+  </ItemNamingSchemeMappings>
+</TComponentSet>

@@ -39,13 +39,47 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
+DocumentPath=HydrophoneGroup3FilterAndAmpCircuit.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=4
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=FPQITQXG
+
+[Document2]
+DocumentPath=STM32F413VGT6.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=11
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=BIPFBNTR
+
+[Document3]
 DocumentPath=RS-232.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=10
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -55,14 +89,82 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=MAIDISXO
 
-[Document2]
+[Document4]
+DocumentPath=MAXIM-ADC1.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=5
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=LYNSXEJG
+
+[Document5]
+DocumentPath=MAXIM-ADC2.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=6
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=REQCDOEO
+
+[Document6]
+DocumentPath=MAXIM-ADC3.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=7
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=AOACHUXS
+
+[Document7]
+DocumentPath=HydrophoneGroup2FilterAndAmpCircuit.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=3
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=UWUYWOSA
+
+[Document8]
 DocumentPath=HANC1.0_SCH.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=0
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -72,14 +174,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SAIFVPCO
 
-[Document3]
-DocumentPath=MAXIM-ADC.SchDoc
+[Document9]
+DocumentPath=HydrophoneGroup1FilterAndAmpCircuit.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=2
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -87,9 +189,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=AATHBJSQ
+DocumentUniqueId=JJYYXLIT
 
-[Document4]
+[Document10]
 DocumentPath=..\..\HydroDynamixCurrentForMerging\HANC1.0PCB\PcbLib1.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -106,7 +208,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JQWQXNLI
 
-[Document5]
+[Document11]
 DocumentPath=..\..\HydroDynamixCurrentForMerging\HANC1.0PCB\Texas Instruments Interface RS-232.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -123,7 +225,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document6]
+[Document12]
 DocumentPath=..\..\HydroDynamixCurrentForMerging\HANC1.0PCB\STMicroelectronics STM32 F4.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -140,7 +242,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document7]
+[Document13]
 DocumentPath=..\..\HydroDynamixCurrentForMerging\HANC1.0PCB\Maxim Sensors.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -157,7 +259,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document8]
+[Document14]
 DocumentPath=..\..\HydroDynamixCurrentForMerging\HANC1.0PCB\Maxim Microcontroller.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -174,7 +276,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document9]
+[Document15]
 DocumentPath=..\..\HydroDynamixCurrentForMerging\HANC1.0PCB\Maxim Data Converters.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -191,7 +293,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document10]
+[Document16]
 DocumentPath=..\..\HydroDynamixCurrentForMerging\HANC1.0PCB\TRS3122.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -208,7 +310,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FRFUOETA
 
-[Document11]
+[Document17]
 DocumentPath=..\..\HydroDynamixCurrentForMerging\HANC1.0PCB\LN3940.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -225,7 +327,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=MHNUGVMX
 
-[Document12]
+[Document18]
 DocumentPath=..\..\HydroDynamixCurrentForMerging\HANC1.0PCB\Max11043.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -242,14 +344,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QNSTYKUJ
 
-[Document13]
-DocumentPath=Max11043.SchLib
+[Document19]
+DocumentPath=HydrophoneConnectors-BNC.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -257,41 +359,11 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=QNSTYKUJ
+DocumentUniqueId=EGDUTVPG
 
-[Document14]
-DocumentPath=STM32F413VGT6.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=BIPFBNTR
-
-[Document15]
-DocumentPath=PreAmplicationFilteringCircuit.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=JRLYRVGC
+[SearchPath1]
+Path=ComponentLibraries\*.*
+IncludeSubFolders=1
 
 [Configuration1]
 Name=Default Configuration
