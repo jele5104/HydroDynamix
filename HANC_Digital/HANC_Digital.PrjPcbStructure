@@ -1,0 +1,3 @@
+Record=TopLevelDocument|FileName=HANC_Digital_TS.SchDoc
+Record=SheetSymbol|SourceDocument=HANC_Digital_TS.SchDoc|Designator=U1|SchDesignator=U1|FileName=STM32F411.SchDoc|SymbolType=Normal|RawFileName=STM32F411.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=HANC_Digital_TS.SchDoc|Designator=U_RS-232|SchDesignator=U_RS-232|FileName=RS-232.SchDoc|SymbolType=Normal|RawFileName=RS-232.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
