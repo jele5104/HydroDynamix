@@ -1,0 +1,28 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [HANC_Digital.PrjPcb]
+   Generated File[HANC_Digital.GTL]
+   Generated File[HANC_Digital.GBL]
+   Generated File[HANC_Digital.GPB]
+   Generated File[HANC_Digital.GPT]
+   Generated File[HANC_Digital.GTO]
+   Generated File[HANC_Digital.GTP]
+   Generated File[HANC_Digital.GTS]
+   Generated File[HANC_Digital.GBS]
+   Generated File[HANC_Digital.GBP]
+   Generated File[HANC_Digital.GBO]
+   Generated File[HANC_Digital.GKO]
+   Generated File[HANC_Digital.GM1]
+   Generated File[HANC_Digital.GM13]
+   Generated File[HANC_Digital.GM15]
+   Generated File[HANC_Digital.GD1]
+   Generated File[HANC_Digital.GG1]
+   Generated File[HANC_Digital.RUL]
+   Generated File[HANC_Digital.EXTREP]
+   Generated File[HANC_Digital.REP]
+
+
+Files Generated   : 19
+Documents Printed : 0
+
+Finished Output Generation At 12:29:34 PM On 2/16/2017
