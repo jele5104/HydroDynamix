@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: HANC_Digital.PcbDoc   2/16/2017  7:15:48 PM
+NCDrill File Report For: HANC_Digital.PcbDoc   2/16/2017  10:12:23 PM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,9 +7,9 @@ ASCII RoundHoles File : HANC_Digital.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      15mil (0.381mm)                                           Round             55        PTH        11.91inch (302.55mm)
+T1      15mil (0.381mm)                                           Round             57        PTH        10.45inch (265.35mm)
 T2      35mil (0.9mm)                                             Round             34        PTH        5.70inch (144.66mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              89
+Totals                                                                              91
 
-Total Processing Time (hh:mm:ss) : 00:00:01
+Total Processing Time (hh:mm:ss) : 00:00:00
