@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [HANC_Digital.PrjPcb]
+   Generated File[HANC_Digital.TXT]
+   Generated File[HANC_Digital.LDP]
+   Generated File[HANC_Digital.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 10:12:23 PM On 2/16/2017
