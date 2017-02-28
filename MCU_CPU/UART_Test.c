@@ -3,8 +3,9 @@
 #include "stm32f4xx_usart.h"
 #include "stdio.h"
 
-extern volatile uint16_t test;
-extern volatile uint16_t command;
+volatile uint16_t test;
+volatile uint16_t command[20];
+volatile uint16_t i;
 
 // Receive character from Termite
 uint16_t USART_GetChar()
@@ -18,28 +19,33 @@ uint16_t USART_GetChar()
 }
 
 // Receive character as string
-void receiveString(char *buffer, )
+uint16_t receiveString()
 {
+	i = 0;
 	
-
 	while(1)
 	{
 		while(!USART_GetFlagStatus(USART1, USART_FLAG_RXNE));
 		ch = USART_GetChar();
 		
 		if (ch != 0)
-		
+		{
+			if (ch == '\n')
+			{
+				i = 0;
+				command[0] = 0;
+				break;
+			else
+			{
+				command[i] = ch;
+				i++;
+			}
+				
+			ch = 0;
+		}
 	}
 	
-	uint16_t i;
-	char data;
-
-	for (i=0; i<len; i++)
-	{
-		
-
-		data = 
-
+	return command;
 }
 
 
@@ -93,7 +99,7 @@ int main(void)
 		{
 			sendMessage(“transmission and reception successful\n”);
 		}
-		if (command == ‘’)
+		if (command = "get data")
 		{
 			sendMessage(“data received\n”);
 		}
