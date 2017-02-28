@@ -18,8 +18,55 @@
  */
 
 
-// Include core modules
+
+#include "stm32f4xx.h"
+#include "stm32f4xx_gpio.h"
+#include "stm32f4xx_rcc.h"
+#include "stm32f4xx_usart.h"
+#include "stdio.h"
+
+// discovery board pin12 is green led
+// digital board pin PD13
+#define LED1	GPIO_Pin_13
+//#define LED_ORANGE	GPIO_Pin_13
+//#define LED_RED		GPIO_Pin_14
+//#define LED_BLUE	GPIO_Pin_15
+//#define BUTTON_pin 	0x01
+
+int toggleLED(uint16_t led){
+	GPIOD->ODR ^= led;
+	return 0;
+}
+
+int main(void)
+{
+    // Initialize system
+    SystemInit();
+	GPIO_InitTypeDef GPIO_InitDef;
+	//USART_InitTypeDef USART_InitStruct;
+
+	//Initialization for LEDs
+	RCC->AHB1ENR |= RCC_AHB1Periph_GPIOD; //enable GPIOD clock
+	GPIO_InitDef.GPIO_Pin = LED1;
+	GPIO_InitDef.GPIO_Mode = GPIO_Mode_OUT;
+	GPIO_InitDef.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitDef.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_InitDef.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOD, &GPIO_InitDef);
+
+	toggleLED(LED1);
+
+}
+
+
+
+
+
+
+
 /*
+// Include core modules
+
 #include "stm32f4xx.h"
 // Include my libraries here
 #include "defines.h"
@@ -52,6 +99,7 @@ int main(void) {
 /* Most of this code was written by: Author: Tilen Majerle
  * Website: ​http://stm32f4­discovery.com Note: Code edited by Aram Garibyan */
 
+/*
 // Include core modules
 #include "stm32f4xx.h"
 // Include my libraries here
@@ -84,15 +132,15 @@ int main(void) {
 	TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
 	SPI_WAIT(SPI1);
 
-/*
+
 	// read 2 bytes from 0x08 config register
-	TM_GPIO_SetPinLow(GPIOD, CS_Pin );
+	//TM_GPIO_SetPinLow(GPIOD, CS_Pin );
 	//cmd byte   start, addr4, addr3, addr2, addr1, addr0, r/w, 0
-	TM_SPI_Send(SPI1, 0x20);
-	TM_SPI_Send(SPI1, 0xAA);
-	TM_SPI_Send(SPI1, 0xAA);
-	TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
-*/
+	//TM_SPI_Send(SPI1, 0x20);
+	//TM_SPI_Send(SPI1, 0xAA);
+	//TM_SPI_Send(SPI1, 0xAA);
+	//TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
+
 	// Do a read of the config register
 	TM_GPIO_SetPinLow(GPIOD, CS_Pin );
 	//0001 1110
@@ -105,5 +153,4 @@ int main(void) {
 
 	while(1) {}
 }
-
-
+*/
