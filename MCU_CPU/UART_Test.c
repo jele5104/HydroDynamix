@@ -3,15 +3,51 @@
 #include "stm32f4xx_usart.h"
 #include "stdio.h"
 
-// Receive message from Termite
-uint16_t USART_GetChar(){
-	while(!USART_GetFlagStatus(USART2, USART_FLAG_RXNE));
-	return USART_ReceiveData(USART2);
+extern volatile uint16_t test;
+extern volatile uint16_t command;
+
+// Receive character from Termite
+uint16_t USART_GetChar()
+{
+	uint16_t ch;
+
+	while(!USART_GetFlagStatus(USART1, USART_FLAG_RXNE));
+	ch = USART_ReceiveData(USART1);
+
+	return ch;
 }
 
+// Receive character as string
+void receiveString(char *buffer, )
+{
+	
+
+	while(1)
+	{
+		while(!USART_GetFlagStatus(USART1, USART_FLAG_RXNE));
+		ch = USART_GetChar();
+		
+		if (ch != 0)
+		
+	}
+	
+	uint16_t i;
+	char data;
+
+	for (i=0; i<len; i++)
+	{
+		
+
+		data = 
+
+}
+
+
 // Send message to Termite
-void sendMessage(char* message){
-	while(*message){
+void sendMessage(char *message)
+{
+	while(*message)
+	{
 		sendChar(*message++);
 	}
 }
@@ -49,14 +85,13 @@ int main(void)
 	USART_Init(USART1, &USART_InitStruct);
 	USART_Cmd(USART1, ENABLE);
 
-	uint16_t command;
-
 	while(1){
-		command = USART_GetChar();
+		test = USART_GetChar();
 		
-		if (command == 't')
+		
+		if (test == 't')
 		{
-			sendMessage(“transception successful\n”);
+			sendMessage(“transmission and reception successful\n”);
 		}
 		if (command == ‘’)
 		{
