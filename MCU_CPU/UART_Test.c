@@ -93,7 +93,7 @@ int main(void)
 
 	while(1){
 		test = USART_GetChar();
-		
+		command = receiveString();
 		
 		if (test == 't')
 		{
