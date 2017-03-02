@@ -4,21 +4,135 @@
  *  Created on: Jan 24, 2017
  *      Author: Matt
  */
+
+/**
+  ******************************************************************************
+  * @file    main.c
+  * @author  Ac6
+  * @version V1.0
+  * @date    01-December-2013
+  * @brief   Default main function.
+  ******************************************************************************
+*/
+
+
+#include "stm32f4xx.h"
+
+#define LED1	GPIO_Pin_13		//PD13
+#define LED2	GPIO_Pin_14		//PD14
+#define LED3	GPIO_Pin_15		//PD15
+#define LED4	GPIO_Pin_0		//PE0
+#define LED5	GPIO_Pin_1		//PE1
+
+void toggleGPIOD(uint16_t led){
+	GPIOD->ODR ^= led;
+}
+
+void toggleGPIOE(uint16_t led){
+	GPIOE->ODR ^= led;
+}
+
+void sendChar(uint16_t c){
+	//while(!(USART1->SR & USART_FLAG_TXE));
+	while (!USART_GetFlagStatus(USART2, USART_FLAG_TXE));
+	USART_SendData(USART2, c);
+	//USART1->DR = (message & (uint16_t)0x01FF);
+}
+
+void sendMessage(char* message){
+	while(*message){
+		sendChar(*message++);
+	}
+}
+
+uint16_t getChar(){
+	while(!USART_GetFlagStatus(USART2, USART_FLAG_RXNE));
+	return USART_ReceiveData(USART2);
+}
+
 /*
- *    Keil project for SPI
- *
- *    Before you start, select your target, on the right of the "Load" button
- *
- *    @author        Tilen Majerle
- *    @email        tilen@majerle.eu
- *    @website    http://stm32f4-discovery.com
- *    @ide        Keil uVision 5
- *    @packs        STM32F4xx Keil packs version 2.2.0 or greater required
- *    @stdperiph    STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- */
+void getMessage(char* message){
+	while(*)
+}
+*/
 
 
+int main(void){
 
+	// Start of initialization sequence
+	// on start up MCU will initialize itself and ADC
+
+	GPIO_InitTypeDef GPIO_InitDef;
+	USART_InitTypeDef USART_InitStruct;
+
+	RCC->AHB1ENR |= RCC_AHB1Periph_GPIOD; //enable GPIOD clock
+	RCC->AHB1ENR |= RCC_AHB1Periph_GPIOE;  //enable GPIOE clock
+
+	//Initialization for LEDs
+	GPIO_InitDef.GPIO_Pin = LED1 | LED2| LED3;
+	GPIO_InitDef.GPIO_Mode = GPIO_Mode_OUT;
+	GPIO_InitDef.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitDef.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_InitDef.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOD, &GPIO_InitDef);
+
+	GPIO_InitDef.GPIO_Pin = LED4 | LED5;
+	GPIO_Init(GPIOE, &GPIO_InitDef);
+
+
+	//GPIO Initialization for USART2
+	//Enable GPIO clock
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+
+	//Enable UART clock
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
+
+	//Connect PA2 to USART2 Tx
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource2, GPIO_AF_USART2);
+	//Connect PA3 to USART2 Rx
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource3, GPIO_AF_USART2);
+
+	//Configure USART2 Tx as alternate function
+	GPIO_InitDef.GPIO_Pin = GPIO_Pin_2;
+	GPIO_InitDef.GPIO_Mode = GPIO_Mode_AF;
+	GPIO_InitDef.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitDef.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_InitDef.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOA, &GPIO_InitDef);
+
+	//Configure USART2 Rx as alternate function
+	GPIO_InitDef.GPIO_Mode = GPIO_Mode_AF;
+	GPIO_InitDef.GPIO_Pin = GPIO_Pin_3;
+	GPIO_Init(GPIOA, &GPIO_InitDef);
+
+	USART_InitStruct.USART_BaudRate = 9600;
+	USART_InitStruct.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+	USART_InitStruct.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
+	USART_InitStruct.USART_Parity = USART_Parity_No;
+	USART_InitStruct.USART_StopBits = USART_StopBits_1;
+	USART_InitStruct.USART_WordLength = USART_WordLength_8b;
+	USART_Init(USART2, &USART_InitStruct);
+
+	USART_Cmd(USART2, ENABLE);
+
+
+	char cIn;
+	// once complete MCU will send ready command
+
+	while(1){
+		// enter idle state. Wait to receive command from robosub
+		 cIn = getChar();
+
+		//when command is received determine proper action and respond
+		if (cIn == 'A'){
+			sendChar('Z');
+		}
+	}
+
+
+}
+
+/*
 #include "stm32f4xx.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_rcc.h"
@@ -28,6 +142,10 @@
 // discovery board pin12 is green led
 // digital board pin PD13
 #define LED1	GPIO_Pin_13
+#define LED2	GPIO_Pin_14
+#define LED3	GPIO_Pin_15
+//#define LED4	GPIO_Pin_0
+//#define LED5	GPIO_Pin_1
 //#define LED_ORANGE	GPIO_Pin_13
 //#define LED_RED		GPIO_Pin_14
 //#define LED_BLUE	GPIO_Pin_15
@@ -47,17 +165,24 @@ int main(void)
 
 	//Initialization for LEDs
 	RCC->AHB1ENR |= RCC_AHB1Periph_GPIOD; //enable GPIOD clock
-	GPIO_InitDef.GPIO_Pin = LED1;
+	GPIO_InitDef.GPIO_Pin = LED1 | LED2 | LED3;
 	GPIO_InitDef.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitDef.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitDef.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitDef.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOD, &GPIO_InitDef);
 
-	toggleLED(LED1);
+
+	while(1){
+		toggleLED(LED1);
+		toggleLED(LED2);
+		toggleLED(LED3);
+		//toggleLED(LED4);
+		//toggleLED(LED5);
+	}
 
 }
-
+*/
 
 
 
