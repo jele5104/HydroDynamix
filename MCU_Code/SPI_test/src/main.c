@@ -50,11 +50,11 @@ uint16_t getChar(){
 	return USART_ReceiveData(USART2);
 }
 
-/*
-void getMessage(char* message){
-	while(*)
-}
-*/
+
+//void getMessage(char* message){
+//	while(*)
+//}
+
 
 
 int main(void){
@@ -118,19 +118,21 @@ int main(void){
 
 	char cIn;
 	// once complete MCU will send ready command
-
+	sendMessage("Ready\n");
 	while(1){
+		//sendMessage("Ready\n");
 		// enter idle state. Wait to receive command from robosub
-		 cIn = getChar();
+		cIn = getChar();
 
 		//when command is received determine proper action and respond
 		if (cIn == 'A'){
-			sendChar('Z');
+			sendMessage("Z\n");
 		}
 	}
 
-
 }
+
+
 
 /*
 #include "stm32f4xx.h"
