@@ -15,8 +15,13 @@
   ******************************************************************************
 */
 
-
 #include "stm32f4xx.h"
+// Include my libraries here
+#include "defines.h"
+#include "tm_stm32f4_spi.h"
+#include "tm_stm32f4_delay.h"
+#include "tm_stm32f4_mco_output.h"
+
 
 #define LED1	GPIO_Pin_13		//PD13
 #define LED2	GPIO_Pin_14		//PD14
@@ -55,8 +60,10 @@ uint16_t getChar(){
 //	while(*)
 //}
 
-
-
+//15 -- PC0
+//16 -- PC1
+#define Foff GPIO_Pin_0
+#define Fon  GPIO_Pin_1
 int main(void){
 
 	// Start of initialization sequence
@@ -115,6 +122,13 @@ int main(void){
 
 	USART_Cmd(USART2, ENABLE);
 
+	// setting force on and force off for the rs232
+	TM_GPIO_Init(GPIOC, Foff, TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_NOPULL, TM_GPIO_Speed_High);
+	TM_GPIO_Init(GPIOC, Fon, TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_NOPULL, TM_GPIO_Speed_High);
+	// set gpio pin high to start
+	TM_GPIO_SetPinHigh(GPIOC, Foff );
+	TM_GPIO_SetPinHigh(GPIOC, Fon );
+
 
 	char cIn;
 	// once complete MCU will send ready command
@@ -122,6 +136,7 @@ int main(void){
 	while(1){
 		//sendMessage("Ready\n");
 		// enter idle state. Wait to receive command from robosub
+		//
 		cIn = getChar();
 
 		//when command is received determine proper action and respond
