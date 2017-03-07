@@ -21,6 +21,9 @@
 #include "tm_stm32f4_spi.h"
 #include "tm_stm32f4_delay.h"
 #include "tm_stm32f4_mco_output.h"
+#include<stdio.h>
+#include "stm32f4xx_usart.h"
+#include "stm32f4xx_rcc.h"
 
 
 #define LED1	GPIO_Pin_13		//PD13
@@ -50,15 +53,22 @@ void sendMessage(char* message){
 	}
 }
 
+
 uint16_t getChar(){
 	while(!USART_GetFlagStatus(USART2, USART_FLAG_RXNE));
 	return USART_ReceiveData(USART2);
 }
 
 
-//void getMessage(char* message){
-//	while(*)
-//}
+
+void getMessage(char message[],int size){
+	int i;
+
+	for(i=0; i<size; i++){
+		message[i] = getChar();
+	}
+}
+
 
 //15 -- PC0
 //16 -- PC1
@@ -130,21 +140,20 @@ int main(void){
 	TM_GPIO_SetPinHigh(GPIOC, Fon );
 
 
-	char cIn;
-	// once complete MCU will send ready command
-	sendMessage("Ready\n");
-	while(1){
-		//sendMessage("Ready\n");
-		// enter idle state. Wait to receive command from robosub
-		//
-		cIn = getChar();
 
-		//when command is received determine proper action and respond
-		if (cIn == 'A'){
-			sendMessage("Z\n");
+	sendMessage("Ready\n");
+	// once complete MCU will send ready command
+	while(1){
+		char cIn[5] = {0};
+		getMessage(cIn,sizeof(cIn));
+
+		if(cIn[0] == 't' && cIn[1] == 'e' && cIn[2] == 's' && cIn[3] == 't' ){
+			sendMessage("Transmission and reception successful\n");
+		}
+		if(cIn[0] == 'g' && cIn[1] == 'e' && cIn[2] == 't' && cIn[3] == 'D' ){
+			sendMessage("Data Received\n");
 		}
 	}
-
 }
 
 
@@ -251,6 +260,8 @@ int main(void) {
 #include "tm_stm32f4_mco_output.h"
 #include "max11043.h"
 #define CS_Pin GPIO_Pin_0
+
+
 int main(void) {
 	uint8_t ADC_data[2];
 	ADC_data[0] = 0xAA;
@@ -275,23 +286,34 @@ int main(void) {
 	SPI_WAIT(SPI1);
 
 
-	// read 2 bytes from 0x08 config register
-	//TM_GPIO_SetPinLow(GPIOD, CS_Pin );
+
+
 	//cmd byte   start, addr4, addr3, addr2, addr1, addr0, r/w, 0
-	//TM_SPI_Send(SPI1, 0x20);
-	//TM_SPI_Send(SPI1, 0xAA);
-	//TM_SPI_Send(SPI1, 0xAA);
-	//TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
+	// read 2 bytes from 0x08 config register
+	TM_GPIO_SetPinLow(GPIOD, CS_Pin );
+	TM_SPI_Send(SPI1, 0x22);
+	TM_SPI_ReadMulti(SPI1, ADC_data,0x00,2);
+	TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
+
+	SPI_WAIT(SPI1);
+
+	TM_GPIO_SetPinLow(GPIOD, CS_Pin );
+	TM_SPI_Send(SPI1, 0x20);
+	TM_SPI_Send(SPI1, 0x60);
+	TM_SPI_Send(SPI1, 0x20);
+	TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
+
+	SPI_WAIT(SPI1);
 
 	// Do a read of the config register
+
 	TM_GPIO_SetPinLow(GPIOD, CS_Pin );
-	//0001 1110
 	TM_SPI_Send(SPI1, 0x22);
-	TM_SPI_ReadMulti(SPI1, ADC_data,0xFF,2);
+	TM_SPI_ReadMulti(SPI1, ADC_data,0x00,2);
 	TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
 	//MAX11043_init( SPI1, GPIOD, CS_Pin );
 	//TM_SPI_Send(SPI1, 0x22);
-	//SPI_WAIT(SPI1)
+	SPI_WAIT(SPI1)
 
 	while(1) {}
 }
