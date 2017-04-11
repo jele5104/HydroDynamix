@@ -56,9 +56,9 @@
 #define PDOSC_NORMAL 0x0000
 #define BITS_24 0x0020
 #define BITS_16 0x0000
-#define SCHANA_ON 0x0010
+#define SCHANA_ON  0x0010
 #define SCHANA_OFF 0x0000
-#define SCHANB_ON 0x0008
+#define SCHANB_ON  0x0008
 #define SCHANB_OFF 0x0000
 #define SCHANC_ON  0x0004
 #define SCHANC_OFF 0x0000
@@ -84,7 +84,7 @@
 #define ENBIASP_ENABLED  0x0002
 #define ENBIASP_DISABLED  0x0000
 #define ENBIASN_ENABLED  0x0001
-#define ENBIASB_DISABLED  0x0000
+#define ENBIASN_DISABLED  0x0000
 // Reference register constants
 #define EXTREF_EXT 0x0080
 #define EXTREF_INT 0x0000

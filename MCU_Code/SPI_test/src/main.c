@@ -14,7 +14,7 @@
   * @brief   Default main function.
   ******************************************************************************
 */
-
+/*
 #include "stm32f4xx.h"
 // Include my libraries here
 #include "defines.h"
@@ -155,7 +155,7 @@ int main(void){
 		}
 	}
 }
-
+*/
 
 
 /*
@@ -250,7 +250,7 @@ int main(void) {
 /* Most of this code was written by: Author: Tilen Majerle
  * Website: ​http://stm32f4­discovery.com Note: Code edited by Aram Garibyan */
 
-/*
+
 // Include core modules
 #include "stm32f4xx.h"
 // Include my libraries here
@@ -259,13 +259,34 @@ int main(void) {
 #include "tm_stm32f4_delay.h"
 #include "tm_stm32f4_mco_output.h"
 #include "max11043.h"
-#define CS_Pin GPIO_Pin_0
 
+#define CS_Pin1 GPIO_Pin_0
+#define CS_Pin2 GPIO_Pin_1
+#define CONVRUN GPIO_Pin_15
+#define EOC GPIO_Pin_12
+#define SHDN1 GPIO_Pin_0
+#define SHDN2 GPIO_Pin_10
+#define DACSTEP GPIO_Pin_12
+#define READSIZE 2
+
+void readReg(uint8_t addr, uint8_t* dataIn, uint32_t datasize){
+    uint8_t commandByte = 0;
+    TM_GPIO_SetPinLow(GPIOD, CS_Pin2);
+
+    commandByte = (addr << 2)| 0x02 ;
+    TM_SPI_Send(SPI1, commandByte);
+    TM_SPI_ReadMulti(SPI1, dataIn, 0x00, datasize);
+
+    TM_GPIO_SetPinLow(GPIOD, CS_Pin2);
+}
 
 int main(void) {
-	uint8_t ADC_data[2];
-	ADC_data[0] = 0xAA;
-	ADC_data[1] = 0xBB;
+	uint8_t ADC_data[8];
+	uint8_t dataFromADC[2];
+	ADC_data[0] = 0x00;
+	ADC_data[1] = 0x00;
+	ADC_data[2] = 0x00;
+	ADC_data[3] = 0x00;
 	// Initialize system
 	SystemInit();
 	// Initialize delay
@@ -273,48 +294,96 @@ int main(void) {
 	// Initialize MCO2 output, pin PC9
 	TM_MCOOUTPUT_InitMCO2();
 	// Set MCO2 output = SYSCLK / 4
-	TM_MCOOUTPUT_SetOutput2(TM_MCOOUTPUT2_Source_SYSCLK, TM_MCOOUTPUT_Prescaler_4);
+	TM_MCOOUTPUT_SetOutput2(TM_MCOOUTPUT2_Source_SYSCLK, TM_MCOOUTPUT_Prescaler_5);
 	// Initialize SPI
 	// SCK = PC10, MOSI = PC12, MISO = PC11
 	// SCK = PA5, MOSI = PA7, MISO = PA6
 	//TM_SPI_InitFull( SPI1, TM_SPI_PinsPack_1, 2, TM_SPI_Mode_0, SPI_Mode_Master, SPI_FirstBit_MSB );
-	TM_SPI_InitFull( SPI1, TM_SPI_PinsPack_1, SPI_BaudRatePrescaler_2, TM_SPI_Mode_0, SPI_Mode_Master, SPI_FirstBit_MSB );
+	TM_SPI_InitFull( SPI1, TM_SPI_PinsPack_1, SPI_BaudRatePrescaler_4, TM_SPI_Mode_0, SPI_Mode_Master, SPI_FirstBit_MSB );
 	TM_SPI_SetDataSize( SPI1, TM_SPI_DataSize_8b );
-	TM_GPIO_Init(GPIOD, CS_Pin, TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_NOPULL, TM_GPIO_Speed_High);
+
+
+	TM_GPIO_Init(GPIOD, SHDN2, TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_DOWN, TM_GPIO_Speed_High);
+	TM_GPIO_Init(GPIOD, SHDN1 , TM_GPIO_Mode_IN, TM_GPIO_OType_PP, TM_GPIO_PuPd_UP, TM_GPIO_Speed_High);
+	TM_GPIO_Init(GPIOD, DACSTEP, TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_DOWN, TM_GPIO_Speed_High);
+	TM_GPIO_Init(GPIOD, CS_Pin2, TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_UP, TM_GPIO_Speed_High);
+	TM_GPIO_Init(GPIOD, CS_Pin1, TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_UP, TM_GPIO_Speed_High);
+	TM_GPIO_Init(GPIOE, CONVRUN , TM_GPIO_Mode_OUT, TM_GPIO_OType_PP, TM_GPIO_PuPd_UP, TM_GPIO_Speed_High);
+	TM_GPIO_Init(GPIOB, EOC , TM_GPIO_Mode_IN, TM_GPIO_OType_PP, TM_GPIO_PuPd_NOPULL, TM_GPIO_Speed_High);
+
+
 	// set gpio pin high to start
-	TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
+	TM_GPIO_SetPinHigh(GPIOD, CS_Pin1 );
+	TM_GPIO_SetPinHigh(GPIOD, CS_Pin2 );
+	TM_GPIO_SetPinLow(GPIOD, DACSTEP );
+	TM_GPIO_SetPinLow(GPIOE, CONVRUN );
+	TM_GPIO_SetPinHigh(GPIOD, SHDN1 );
+	TM_GPIO_SetPinLow(GPIOD, SHDN2 );
+	TM_GPIO_SetPinHigh(GPIOD, SHDN2 );
+	TM_GPIO_SetPinLow(GPIOD, SHDN2 );
+
 	SPI_WAIT(SPI1);
-
-
-
-
-	//cmd byte   start, addr4, addr3, addr2, addr1, addr0, r/w, 0
-	// read 2 bytes from 0x08 config register
-	TM_GPIO_SetPinLow(GPIOD, CS_Pin );
+int i = 0;
+while(i<3){
+	TM_GPIO_SetPinLow(GPIOD, CS_Pin2 );
 	TM_SPI_Send(SPI1, 0x22);
 	TM_SPI_ReadMulti(SPI1, ADC_data,0x00,2);
-	TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
-
+	TM_GPIO_SetPinHigh(GPIOD, CS_Pin2 );
 	SPI_WAIT(SPI1);
 
-	TM_GPIO_SetPinLow(GPIOD, CS_Pin );
-	TM_SPI_Send(SPI1, 0x20);
-	TM_SPI_Send(SPI1, 0x60);
-	TM_SPI_Send(SPI1, 0x20);
-	TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
-
-	SPI_WAIT(SPI1);
 
 	// Do a read of the config register
+	TM_GPIO_SetPinLow(GPIOD, CS_Pin2 );
+	TM_SPI_Send(SPI1, 0x20);
+	TM_SPI_Send(SPI1, 0x60);
+	TM_SPI_Send(SPI1, 0x80);
+	TM_GPIO_SetPinHigh(GPIOD, CS_Pin2 );
 
-	TM_GPIO_SetPinLow(GPIOD, CS_Pin );
-	TM_SPI_Send(SPI1, 0x22);
+
+	SPI_WAIT(SPI1);
+	TM_GPIO_SetPinLow(GPIOD, CS_Pin2 );
+	TM_SPI_Send(SPI1, 0x1E);
 	TM_SPI_ReadMulti(SPI1, ADC_data,0x00,2);
-	TM_GPIO_SetPinHigh(GPIOD, CS_Pin );
-	//MAX11043_init( SPI1, GPIOD, CS_Pin );
-	//TM_SPI_Send(SPI1, 0x22);
-	SPI_WAIT(SPI1)
-
-	while(1) {}
+	TM_GPIO_SetPinHigh(GPIOD, CS_Pin2 );
+	SPI_WAIT(SPI1);
+	i++;
 }
-*/
+
+
+int ret = MAX11043_init( SPI1, GPIOD, CS_Pin2 );
+
+TM_GPIO_SetPinLow(GPIOD, CS_Pin2 );
+TM_SPI_Send(SPI1, 0x22);
+TM_SPI_ReadMulti(SPI1, ADC_data,0x00,2);
+TM_GPIO_SetPinHigh(GPIOD, CS_Pin2 );
+SPI_WAIT(SPI1);
+
+TM_GPIO_SetPinLow(GPIOD, CS_Pin2 );
+TM_SPI_Send(SPI1, 0x32);
+TM_SPI_ReadMulti(SPI1, ADC_data,0x00,2);
+TM_GPIO_SetPinHigh(GPIOD, CS_Pin2 );
+SPI_WAIT(SPI1);
+
+if(ret == 0)return 0;
+
+int EOC_val = 0;
+TM_GPIO_SetPinHigh(GPIOE, CONVRUN);
+while(1){
+	if(!GPIO_ReadInputDataBit(GPIOB, EOC)){
+		TM_GPIO_SetPinLow(GPIOD, CS_Pin2 );
+		TM_SPI_Send(SPI1, 0x1A);
+		TM_SPI_ReadMulti(SPI1, ADC_data,0x00,8);
+		TM_GPIO_SetPinLow(GPIOE, CONVRUN);
+		TM_GPIO_SetPinHigh(GPIOD, CS_Pin2 );
+		EOC_val = 0;
+		SPI_WAIT(SPI1);
+		break;
+		//TM_GPIO_SetPinHigh(GPIOE, CONVRUN);
+	} else EOC_val = 1;
+
+}
+SPI_WAIT(SPI1);
+
+while(1);
+}
+
