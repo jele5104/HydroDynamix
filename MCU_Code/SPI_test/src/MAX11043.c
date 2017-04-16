@@ -65,7 +65,7 @@ int MAX11043_init( SPI_TypeDef* SPIx, GPIO_TypeDef* GPIOx, uint16_t CS_Pin ){
         return false;
 
 
-    registerData16 = ( BDAC_HALF_AVDD | DIFF_SINGLE | EQ_DISABLED | MODG_GAIN_1 | PDPGA_NORMAL | FILT_DISABLED | PGAG_GAIN_8 | ENBIASP_DISABLED | ENBIASN_DISABLED );
+    registerData16 = ( BDAC_HALF_AVDD | DIFF_SINGLE | EQ_DISABLED | MODG_GAIN_1 | PDPGA_POWER_DOWN | FILT_DISABLED | PGAG_GAIN_8 | ENBIASP_DISABLED | ENBIASN_DISABLED );
     // Disassemble data into one byte segments
     registerDataWrite[0] = (registerData16 & 0xFF00) >> 8;
     registerDataWrite[1] = registerData16 & 0x00FF;

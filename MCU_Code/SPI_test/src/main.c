@@ -15,6 +15,9 @@
   ******************************************************************************
 */
 /*
+
+//NOTE: UART CODE
+
 #include "stm32f4xx.h"
 // Include my libraries here
 #include "defines.h"
@@ -159,6 +162,7 @@ int main(void){
 
 
 /*
+// NOTE: LED CODE DIGITAL BOARD
 #include "stm32f4xx.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_rcc.h"
@@ -215,41 +219,16 @@ int main(void)
 
 
 
-/*
-// Include core modules
-
-#include "stm32f4xx.h"
-// Include my libraries here
-#include "defines.h"
-#include "tm_stm32f4_spi.h"
-
-int main(void) {
-    // Initialize system
-    SystemInit();
-
-    // Initialize SPI1
-    	// SCK = PA5, MOSI = PA7, MISO = PA6
-	// Initialize SPI2
-	    // SCK = PB13, MOSI = PB14, MISO = PB15
-    TM_SPI_Init(SPI1, TM_SPI_PinsPack_1);
-
-    // Send 0x15 over SPI2
-
-    while(1) {
-    	TM_SPI_Send(SPI1, 0x15);
-
-    }
-}
-*/
 
 
 
 
 
 
-/* Most of this code was written by: Author: Tilen Majerle
- * Website: ​http://stm32f4­discovery.com Note: Code edited by Aram Garibyan */
+// Most of this code was written by: Author: Tilen Majerle
+// Website: ​http://stm32f4­discovery.com Note: Code edited by Aram Garibyan
 
+// NOTE SPI CODE DIGITAL BOARD
 
 // Include core modules
 #include "stm32f4xx.h"
@@ -260,8 +239,9 @@ int main(void) {
 #include "tm_stm32f4_mco_output.h"
 #include "max11043.h"
 
-#define CS_Pin1 GPIO_Pin_0
-#define CS_Pin2 GPIO_Pin_1
+
+#define CS_Pin1 GPIO_Pin_1
+#define CS_Pin2 GPIO_Pin_0
 #define CONVRUN GPIO_Pin_15
 #define EOC GPIO_Pin_12
 #define SHDN1 GPIO_Pin_0
@@ -386,4 +366,7 @@ SPI_WAIT(SPI1);
 
 while(1);
 }
+
+
+
 
